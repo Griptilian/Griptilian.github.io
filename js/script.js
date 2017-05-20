@@ -10,7 +10,7 @@ function getXHR() {
     return xhrobj;
 }
 
-var APPID = "6dd5d55e84742b720ad18912a82e4c96";
+var APPID = "978505c286a16b4f4e85b22078187676";
 
 var cityname;
 var url;
@@ -45,10 +45,7 @@ send.addEventListener('click', function() {
         	humidity.innerHTML = data.main.humidity;
         	windspeed.innerHTML = data.wind.speed;
 		} 
-		
-		
 	}
-	
 	xhr.open('GET', url, true);
 	xhr.send();
  
