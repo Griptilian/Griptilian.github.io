@@ -26,13 +26,16 @@ var windspeed = document.getElementById('windspeed');
 
 send.addEventListener('click', function() {
 	cityname = document.getElementById('cityname').value;
+	alert(cityname);
 	if (cityname == "") {alert("Введіть назву міста"); return;};
 	url = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityname + '&APPID=' + APPID;
+	alert(url);
 	var xhr = getXHR();
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState == 4 && xhr.status != 200)
 		{
 			alert("На жаль, погоди для " + cityname + " на сайті немає");
+			alert(xhr.status);
 			return;
 		}	
     	if (xhr.readyState == 4 && xhr.status == 200) {
