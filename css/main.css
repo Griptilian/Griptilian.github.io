@@ -12,7 +12,7 @@ ul {
 #main {
 	margin:auto;
 	width:1000px;
-	background:#FFB375;
+	background:#CDA4DE;
 }
 #header {
 	padding:10px;
@@ -32,16 +32,30 @@ ul {
 	width:260px;
 	background:#B0FFB0;
 }
-#tabs{
-	padding:10px 0;
-	background:#6666FF;
-}
+
 #con_right {
 	
 	float:right;
 	width:730px;
 	background:#93FFFF;
 }
+
+
+#tabs{
+	padding:10px 0;
+	background:#42AAFF;
+}
+#today{
+	background:#FFCA86;
+}
+#five_days{
+	background:#0095B6;
+}
+#weather_map{
+	background:#0095B6;
+}
+
+
 #weather_today{
 	padding:5px;
 }
