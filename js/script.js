@@ -1,42 +1,55 @@
-var send = document.getElementById("send");
-var today = document.getElementById("today");
-var fiveDays = document.getElementById("five_days");
-var map = document.getElementById("map");
-var weatherToday = document.getElementById("weatherToday");
-var weatherFiveDays = document.getElementById("weatherFiveDays");
-var weatherMap = document.getElementById("weatherMap");
+function getXHR() {
+    var xhrobj;
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xhrobj = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xhrobj = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+    return xhrobj;
+}
 
-send.addEventListener("click", function() {
-	cityname = document.getElementById("cityname").value;
-	document.getElementById("cityname").value = " ";
-	request(cityname, "weather", "today");
-}, false);
+var APPID = "978505c286a16b4f4e85b22078187676";
 
-today.addEventListener("click", function() {
-	today.style.background = "#FFCA86";
-	fiveDays.style.background = "#0095B6";
-	map.style.background = "#0095B6";
-	weatherToday.style.display = "block";
-	weatherFiveDays.style.display = "none";
-	weatherMap.style.display = "none";
-	request(cityname, "weather", "today");
-}, false);
+var cityname;
+var url;
+var send = document.getElementById('send');
 
-fiveDays.addEventListener("click", function() {
-	today.style.background = "#0095B6";
-	fiveDays.style.background = "#FFCA86";
-	map.style.background = "#0095B6";
-	weatherToday.style.display = "none";
-	weatherFiveDays.style.display = "block";
-	weatherMap.style.display = "none";
-	request(cityname, "forecast", "fiveDays");
-}, false);
+var selectedcity = document.getElementById('selectedcity');
+var clouddescr = document.getElementById('clouddescr');
+var cloudimg = document.getElementById('cloudimg');
+var temp = document.getElementById('temp');
+var pressure = document.getElementById('pressure');
+var humidity = document.getElementById('humidity');
+var windspeed = document.getElementById('windspeed');
 
-map.addEventListener("click", function() {
-	today.style.background = "#0095B6";
-	fiveDays.style.background = "#0095B6";
-	map.style.background = "#FFCA86";
-	weatherToday.style.display = "none";
-	weatherFiveDays.style.display = "none";
-	weatherMap.style.display = "block";
+send.addEventListener('click', function() {
+	cityname = document.getElementById('cityname').value;
+	if (cityname == "") {alert("Введіть назву міста"); return;};
+	url = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityname + '&APPID=' + APPID;
+	var xhr = getXHR();
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState == 4 && xhr.status != 200)
+		{
+			alert("На жаль, погоди для " + cityname + " на сайті немає");
+			return;
+		}	
+    	if (xhr.readyState == 4 && xhr.status == 200) {
+        	var data = JSON.parse(xhr.responseText);
+			selectedcity.innerHTML = data.name;
+        	clouddescr.innerHTML = data.weather[0].description;
+        	cloudimg.setAttribute('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png'); 
+        	temp.innerHTML = Math.round(data.main.temp - 273.15);
+        	pressure.innerHTML = data.main.pressure;
+        	humidity.innerHTML = data.main.humidity;
+        	windspeed.innerHTML = data.wind.speed;
+		} 
+		
+		
+	}
+	
+	xhr.open('GET', url, true);
+	xhr.send();
+ 
 }, false);

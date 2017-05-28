@@ -3,8 +3,8 @@
 <head>
 	<title>Погода в Україні та світі</title>
 	<meta charset="utf-8">
-	<script type="text/javascript" src="js/head.js"></script>
-	<link rel="icon" href="images/favicon.ico">
+	<script type="text/javascript" src="js/script_head.js"></script>
+	<link rel="icon" href="favicon.ico">
 	<link rel="stylesheet" href="css/main.css">
 	<!--<script type="text/javascript" src="jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="jquery-script.js"></script>-->
@@ -18,62 +18,47 @@
 			<input type="button" id="send" value="Відправити" />
 		</form>
 	</div>
-	<div id="content">
-		<div id="con_left">
-			<div id="capital">
-				<p>Погода в столиці України</p>
-				<ul>
-						<li><span id="kievSelectedcity"></span><img id="kievCloudimg"></li>
-						<li>Хмарність: <b><span id="kievClouddescr"></span></b></li>
-						<li>Температура повітря: <b><span id="kievTemp"></span>, &#8451;</b></li>
-						<li>Атмосферний тиск: <b><span id="kievPressure"></span>, мм.рт.ст.</b></li>
-						<li>Вологість повітря: <b><span id="kievHumidity"></span>, %</b></li>
-						<li>Швидкість вітру: <b><span id="kievWindspeed"></span>, м/с</b></li>
-				</ul>
-			</div>
-			<div id="other_capital">
-				<p>Погода в інших столицях світу</p>
-			</div>
-		</div>
-		<div id="con_right">
-			<div id="tabs">
-				<span id="today">Погода сьогодні</span>
-				<span id="five_days">Прогноз на 5 днів</span>
-				<span id="map">Погодна карта</span>
-			</div>
-			<div id="weatherToday">
-				<h2>Погода в місті <span id="todaySelectedcity"></span></h2>
+		<div id="content">
+			<div id="con_left">
+				<div id="capital">
+					<p>Погода в столиці України</p>
 					<ul>
-						<li><img id="todayCloudimg"></li>
-						<li>Хмарність: <b><span id="todayClouddescr"></span></b></li>
-						<li>Температура повітря: <b><span id="todayTemp"></span>, &#8451;</b></li>
-						<li>Атмосферний тиск: <b><span id="todayPressure"></span>, мм.рт.ст.</b></li>
-						<li>Вологість повітря: <b><span id="todayHumidity"></span>, %</b></li>
-						<li>Швидкість вітру: <b><span id="todayWindspeed"></span>, м/с</b></li>
+							<li style="display:none">clouds: <b><span id="kiev_clouddescr"></span></b></li>
+							<li><span>Київ</span><img id="kiev_cloudimg"></li>
+							<li>Температура повітря: <b><span id="kiev_temp"></span>, &#8451;</b></li>
+							<li>Атмосферний тиск: <b><span id="kiev_pressure"></span>, мм.рт.ст.</b></li>
+							<li>Вологість повітря: <b><span id="kiev_humidity"></span>, %</b></li>
+							<li>Швидкість вітру: <b><span id="kiev_windspeed"></span>, м/с</b></li>
 					</ul>
 				</div>
-				<div id="weatherFiveDays">
-					<div>
-					 <span id="day0">сьогодні</span>
-					 <span id="day1"></span>
-					 <span id="day2"></span>
-					 <span id="day3"></span>
-					 <span id="day4"></span>
-					 <span id="day5"></span>
+				<div id="other_capital">
+					<p>Погода в інших столицях світу</p>
+				</div>
+			</div>
+			<div id="con_right">
+					<div id="tabs">
+					<span id="today">Погода сьогодні</span>
+					<span id="five_days">Прогноз на 5 днів</span>
+					<span id="weather_map">Погодна карта</span>
 					</div>
-					<table>
-					
-					</table>
-					Five days
-				</div>
-				<div id="weatherMap">
-					There will be a weather map
-				</div>
+					<div id="weather_today">
+						<h2>Погода в місті <span id="selectedcity"></span></h2>
+						<ul>
+							<li>Хмарність: <b><span id="clouddescr"></span></b></li>
+							<img id="cloudimg">
+							<li>Температура повітря: <b><span id="temp"></span>, &#8451;</b></li>
+							<li>Атмосферний тиск: <b><span id="pressure"></span>, hPa</b></li>
+							<li>Вологість повітря: <b><span id="humidity"></span>, %</b></li>
+							<li>Швидкість вітру: <b><span id="windspeed"></span>, meter/sec</b></li>
+						</ul>
+					</div>
+					<div id="weather_five_days">
+					5
+					</div>
+			</div>
 		</div>
-	</div>
 	<div id="footer">
-		
-		<p>Погодні дані одержано із сайту <a href="http://openweathermap.org/">OpenWeatherMap</a></p>
+		Copyright
 	</div>
 </div>
 

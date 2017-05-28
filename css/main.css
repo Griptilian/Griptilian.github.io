@@ -12,14 +12,14 @@ ul {
 #main {
 	margin:auto;
 	width:1000px;
-	background:#CDA4DE;
+	background:#FFB375;
 }
 #header {
 	padding:10px;
 }
 
 #footer {
-	background:#c8FFC8;
+	background:#FFFFC8;
 	text-align:center;
 }
 
@@ -32,46 +32,23 @@ ul {
 	width:260px;
 	background:#B0FFB0;
 }
-
+#tabs{
+	padding:10px 0;
+	background:#6666FF;
+}
 #con_right {
 	
 	float:right;
 	width:730px;
 	background:#93FFFF;
 }
-
-
-#tabs{
-	padding:9px 0;
-	background:#42AAFF;
-}
-#today{
-	background:#FFCA86;
-	padding:10px;
-}
-#weatherToday{
+#weather_today{
 	padding:5px;
 }
-#five_days{
-	padding:10px;
-	background:#0095B6;
-}
-#weatherFiveDays{
-	padding:5px;
+
+#weather_five_days{
 	display:none;
+	
 }
-#map{
-	padding:10px;
-	background:#0095B6;
-}
-#weatherMap{
-	padding:5px;
-	display:none;
-}
-
-
-
-
-
 
 
