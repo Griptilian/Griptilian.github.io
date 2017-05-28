@@ -27,7 +27,7 @@ var windspeed = document.getElementById('windspeed');
 send.addEventListener('click', function() {
 	cityname = document.getElementById('cityname').value;
 	if (cityname == "") {alert("Введіть назву міста"); return;};
-	url = 'api.openweathermap.org/data/2.5/weather?q=' + cityname + '&APPID=' + APPID;
+	url = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityname + '&APPID=' + APPID;
 	var xhr = getXHR();
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState == 4 && xhr.status != 200)
@@ -49,7 +49,7 @@ send.addEventListener('click', function() {
 		
 	}
 	
-	xhr.open('GET', url, true);
+	xhr.open('GET', url, true, ivanpushkedra@gmail.com, 1984qpwo);
 	xhr.send();
  
 }, false);
