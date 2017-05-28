@@ -27,7 +27,7 @@ var windspeed = document.getElementById('windspeed');
 send.addEventListener('click', function() {
 	cityname = document.getElementById('cityname').value;
 	if (cityname == "") {alert("Введіть назву міста"); return;};
-	url = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityname + '&APPID=' + APPID;
+	url = 'api.openweathermap.org/data/2.5/weather?q=' + cityname + '&APPID=' + APPID;
 	var xhr = getXHR();
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState == 4 && xhr.status != 200)
@@ -39,7 +39,7 @@ send.addEventListener('click', function() {
         	var data = JSON.parse(xhr.responseText);
 			selectedcity.innerHTML = data.name;
         	clouddescr.innerHTML = data.weather[0].description;
-        	cloudimg.setAttribute('src', 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png'); 
+        	cloudimg.setAttribute('src', 'openweathermap.org/img/w/' + data.weather[0].icon + '.png'); 
         	temp.innerHTML = Math.round(data.main.temp - 273.15);
         	pressure.innerHTML = data.main.pressure;
         	humidity.innerHTML = data.main.humidity;
