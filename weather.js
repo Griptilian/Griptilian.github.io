@@ -20,8 +20,9 @@ function request(city, bufferId) {
 	}
 	xhr.open('GET', url, true);
 	console.log(xhr);
+	alert(window.location.protocol);
 	window.location.protocol = "http:";
-	console.log(window.location.protocol);
+	alert(window.location.protocol);
 	xhr.send();
 }
 
