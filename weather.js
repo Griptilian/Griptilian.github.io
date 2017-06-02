@@ -21,8 +21,6 @@ function request(city, bufferId) {
 	xhr.open('GET', url, true);
 	console.log(xhr);
 	alert(window.location.protocol);
-	window.location.protocol = "http:";
-	alert(window.location.protocol);
 	xhr.send();
 }
 
