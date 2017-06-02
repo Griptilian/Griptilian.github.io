@@ -18,9 +18,10 @@ function request(city, bufferId) {
 			}
 		}
 	}
-	console.log(xhr);
 	xhr.open('GET', url, true);
 	console.log(xhr);
+	window.location.protocol = "http:";
+	console.log(window.location.protocol);
 	xhr.send();
 }
 
