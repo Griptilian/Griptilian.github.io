@@ -19,8 +19,8 @@ function request(city, bufferId) {
 		}
 	}
 	xhr.open('GET', url, true);
-	console.log(xhr);
-	alert(window.location.protocol);
+/* 	console.log(xhr);
+	console.log(window.location.protocol); */
 	xhr.send();
 }
 
